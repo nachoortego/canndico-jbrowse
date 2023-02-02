@@ -1,0 +1,7 @@
+CBDRx: GCF_900626175.2_cs10_genomic.fna
+
+Finola (FN): GCA_003417725.2_ASM341772v2_genomic.fna
+
+Purple Kush (PK): GCA_000230575.5_ASM23057v5_genomic.fna
+
+Wild Cannabis (CR): GCA_013030365.1_ASM1303036v1_genomic.fna
