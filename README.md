@@ -10,6 +10,8 @@
 
 - [genometools](http://genometools.org/) utlizando `sudo apt install genometools` o `brew install brewsci/bio/genometools`.
 
+- [Descargar archivos](https://drive.google.com/drive/u/4/folders/1rYza8nhP4377urKF0E8Atl_DwukOCSJ8) desde Google Drive para poder visualizar todo correctamente.
+
 ## Instalar JBrowse CLI
 
 
@@ -61,16 +63,44 @@ git clone https://github.com/nachoortego/canndico-jbrowse.git
 
 Para agregar los FASTA, utilizaremos `samtools` para indexar y luego subiremos el archivo. Reemplazar la direccion destino por el directorio de instalacion de jbrowse2
 ```
-samtools faidx genome.fa
-jbrowse add-assembly genome.fa --load copy --out /jbrowse2
+samtools faidx Cannabis_sativa_Jamaican_Lion.fasta
+jbrowse add-assembly Cannabis_sativa_Jamaican_Lion.fasta --load copy --out /jbrowse2
+
+samtools faidx GCA_000230575.5_ASM23057v5_genomic.fna
+jbrowse add-assembly GCA_000230575.5_ASM23057v5_genomic.fna --load copy --out /jbrowse2
+
+samtools faidx GCA_003417725.2_ASM341772v2_genomic.fna
+jbrowse add-assembly GCA_003417725.2_ASM341772v2_genomic.fna --load copy --out /jbrowse2
+
+samtools faidx GCA_013030365.1_ASM1303036v1_genomic.fna
+jbrowse add-assembly GCA_013030365.1_ASM1303036v1_genomic.fna --load copy --out /jbrowse2
+
+samtools faidx GCF_900626175.2_cs10_genomic.fna
+jbrowse add-assembly GCF_900626175.2_cs10_genomic.fna --load copy --out /jbrowse2
+
 ```
 
 Para agregar los GFF, ordenamos e indexamos con `tabix` y hacemos el resto de operaciones con `genometools`
 ```
-gt gff3 -sortlines -tidy -retainids yourfile.gff > yourfile.sorted.gff
-bgzip yourfile.sorted.gff
-tabix yourfile.sorted.gff.gz
-jbrowse add-track yourfile.sorted.gff.gz --load copy
+gt gff3 -sortlines -tidy -retainids CBDRx.gff > CBDRx.sorted.gff
+bgzip CBDRx.sorted.gff
+tabix CBDRx.sorted.gff.gz
+jbrowse add-track CBDRx.sorted.gff.gz --load copy
+
+gt gff3 -sortlines -tidy -retainids Finola.gene.gff3 > Finola.gene.sorted.gff3
+bgzip Finola.gene.sorted.gff3
+tabix Finola.gene.sorted.gff3.gz
+jbrowse add-track Finola.gene.sorted.gff3.gz --load copy
+
+gt gff3 -sortlines -tidy -retainids JamaicanLionDASH.gene.gff3 > JamaicanLionDASH.gene.sorted.gff3
+bgzip JamaicanLionDASH.gene.sorted.gff3
+tabix JamaicanLionDASH.gene.sorted.gff3.gz
+jbrowse add-track JamaicanLionDASH.gene.sorted.gff3.gz --load copy
+
+gt gff3 -sortlines -tidy -retainids PurpleKush.gene.gff3 > PurpleKush.gene.sorted.gff3
+bgzip PurpleKush.gene.sorted.gff3
+tabix PurpleKush.gene.sorted.gff3.gz
+jbrowse add-track PurpleKush.gene.sorted.gff3.gz --load copy
 ```
 ## Visualización de genomas
 
