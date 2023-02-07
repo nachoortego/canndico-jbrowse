@@ -116,6 +116,17 @@ Ahora, con el zoom adecuado, deberíamos de poder ver todo correctamente como la
 
 ![image](https://user-images.githubusercontent.com/79536480/213890251-ff4b9693-6486-41b1-ab82-8c6378e0e3fc.png)
 
+## Agregar nuevos genomas
+
+En caso de querer agregar nuevas opciones de visualización, se debe descargar el `.fasta` y `.gff` correspondientes y agregarlos a JBrowse de la misma forma que se vió anteriormente. A veces los cromosomas del FASTA no coinciden con las referencias del GFF, por lo que será necesario hacer lo siguiente:
+
+1. En el archivo `.fasta` identificar los encabezados (`>`).
+2. Luego identificar los 10 cromosomas, que serán comunmente los primeros 10 encabezados del archivo.
+3. Susituir el primner encabezado por `>Chr1`.
+4. Repetir respectivamente para el resto de cromosomas
+
+Con esto resuelto, todo debería mostrarse como es debido.
+
 
 
 
